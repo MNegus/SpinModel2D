@@ -38,7 +38,8 @@ def plot_spins(input_list, plot_name=None):
 
 def plot_from_file(filename, plot_name=None, bas_vec_1=(1.0, 0.0),
                    bas_vec_2=(0.0, 1.0)):
-    '''Plots spins given from bas_vec_1 csv file. Default is square lattice'''
+    '''Plots spins given from a csv file, depending on basis vectors.
+    Default is square lattice'''
     grid = []
     with open(filename, 'r') as data:
         rows = csv.reader(data)
@@ -55,8 +56,3 @@ def plot_from_file(filename, plot_name=None, bas_vec_1=(1.0, 0.0),
             y_spin_comps.append(math.sin(grid[i][j]))
 
     plot_spins((x_pos, y_pos, x_spin_comps, y_spin_comps), plot_name)
-
-if __name__ == '__main__':
-	plot_from_file('/home/thy68636/Documents/Results_Simple_ferromagnetic/Program_Outputs/First_test_solve/Test_Output/Test_4/results/problem_ID_5/Nelder-Mead.csv')
-				   
-
